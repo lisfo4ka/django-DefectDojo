@@ -36,6 +36,7 @@ class SpotbugsXMLParser(object):
             dupe_key = bug.get('instanceHash')
 
             title = bug.find('ShortMessage').text
+            file_path = bug.find('LongMessage').text
             cwe = bug.get('cweid', default=0)
             severity = SEVERITY[bug.get('priority')]
             description = desc
@@ -58,7 +59,8 @@ class SpotbugsXMLParser(object):
                     active=False,
                     verified=False,
                     numerical_severity=Finding.get_numerical_severity(severity),
-                    static_finding=True
+                    static_finding=True,
+                    file_path=file_path
                 )
                 dupes[dupe_key] = finding
 

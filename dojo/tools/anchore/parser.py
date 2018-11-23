@@ -61,7 +61,8 @@ class AnchoreJSONParser(object):
                     active=False,
                     verified=False,
                     numerical_severity=Finding.get_numerical_severity(severity),
-                    static_finding=True
+                    static_finding=True,
+                    file_path=vuln_package
                 )
                 dupes[dupe_key] = finding
 
