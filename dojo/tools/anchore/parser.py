@@ -61,7 +61,9 @@ class AnchoreJSONParser(object):
                     active=False,
                     verified=False,
                     numerical_severity=Finding.get_numerical_severity(severity),
-                    static_finding=True
+                    static_finding=True,
+                    url='N/A',
+                    endpoints='N/A'
                 )
                 dupes[dupe_key] = finding
 
