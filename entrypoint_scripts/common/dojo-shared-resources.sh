@@ -405,6 +405,10 @@ function install_os_dependencies() {
     echo
 }
 
+function install_yarn_packages() {
+    cd components && yarn && cd ..
+}
+
 function install_db() {
     YUM_CMD=$(which yum)
     APT_GET_CMD=$(which apt-get)
